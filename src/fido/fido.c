@@ -498,7 +498,7 @@ bool wait_button_pressed() {
 uint32_t user_present_time_limit = 0;
 
 bool check_user_presence() {
-    // 直接返回 true，跳过按键确认
+    // Always return true, skip button confirmation
     return true;
 }
 

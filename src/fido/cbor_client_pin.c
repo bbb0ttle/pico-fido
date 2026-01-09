@@ -47,8 +47,8 @@ static bool hkey_init = false;
 extern int encrypt_keydev_f1(const uint8_t keydev[32]);
 
 int beginUsingPinUvAuthToken(bool userIsPresent) {
-    paut.user_present = true;    // 始终标记用户存在
-    paut.user_verified = true;   // 始终标记用户已验证
+    paut.user_present = true;    // Always mark user as present
+    paut.user_verified = true;   // Always mark user as verified
     initial_usage_time_limit = board_millis();
     usage_timer = board_millis();
     paut.in_use = true;
@@ -85,11 +85,11 @@ void stopUsingPinUvAuthToken() {
 }
 
 bool getUserPresentFlagValue() {
-    return true;  // 始终返回用户存在
+    return true;  // Always return user present
 }
 
 bool getUserVerifiedFlagValue() {
-    return true;  // 始终返回用户已验证
+    return true;  // Always return user verified
 }
 
 int regenerate() {
