@@ -498,12 +498,7 @@ bool wait_button_pressed() {
 uint32_t user_present_time_limit = 0;
 
 bool check_user_presence() {
-    if (user_present_time_limit == 0 || user_present_time_limit + TRANSPORT_TIME_LIMIT < board_millis()) {
-        if (wait_button_pressed() == true) { //timeout
-            return false;
-        }
-        //user_present_time_limit = board_millis();
-    }
+    // 直接返回 true，跳过按键确认
     return true;
 }
 
