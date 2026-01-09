@@ -309,9 +309,7 @@ int cbor_make_credential(const uint8_t *data, size_t len) {
         //else if (options.up == NULL) //5.7
         //rup = ptrue;
     }
-    if (pinUvAuthParam.present == false && options.uv == pfalse && file_has_data(ef_pin)) { //8.1
-        CBOR_ERROR(CTAP2_ERR_PUAT_REQUIRED);
-    }
+    // Skip PIN/UV authentication check - always allow credential creation without pinUvAuthParam
     if (enterpriseAttestation > 0) {
         if (!(get_opts() & FIDO2_OPT_EA)) {
             CBOR_ERROR(CTAP1_ERR_INVALID_PARAMETER);
